@@ -1,0 +1,8 @@
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshotClass
+metadata:
+  name: ebs-volumesnapshotclass
+  labels:
+    velero.io/csi-volumesnapshot-class: "true"
+driver: ebs.csi.aws.com
+deletionPolicy: Delete
