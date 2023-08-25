@@ -82,10 +82,9 @@ deletionPolicy: Delete
 
 ## Conclusion
 
-You have now prepared your cluster to support CSI Volume Snapshots and you should see
+You have now prepared your cluster to support CSI Volume Snapshots and you should see FBS and CSI data protection enabled within the TMC console (After you turn it on of course):
 
 ![image](images/enabled.png)
-
 
 ### Relevant Documents:
 
