@@ -65,7 +65,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 ### Create a VolumeSnapshotClass
 
-You need to create a VolumeSnapshotClass with the same name as the driver and the velero.io label on it (Can't confirm this actually works)
+You need to create a VolumeSnapshotClass with the same name as the driver and the ```velero.io/csi-volumesnapshot-class: "true"``` label on it:
 
 * [Velero CSI Documentation](https://velero.io/docs/main/csi/)
 
