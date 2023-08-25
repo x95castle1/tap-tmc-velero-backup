@@ -14,7 +14,7 @@ You need to prepare your cluster to install a new StorageClass to use the CSI Dr
 
 EKS clusters come with the gp2 storageclass by default, but this doesn't come with CSI driver support. gp3 volumes are cheaper and faster supposedly, so this is a good time to install a new default storage class and convert over to gp3 and use the CSI driver.
 
-* https://medium.com/@theintrovertalert/gp2-vs-gp3-why-its-time-to-make-the-switch-for-better-aws-ec2-performance-cf777f0a936a#:~:text=GP3%20volumes%20are%20designed%20to,%2C%20and%20high%2Dtraffic%20applications. 
+* [Why is it Time to Make the Switch to GP3](https://medium.com/@theintrovertalert/gp2-vs-gp3-why-its-time-to-make-the-switch-for-better-aws-ec2-performance-cf777f0a936a#:~:text=GP3%20volumes%20are%20designed%20to,%2C%20and%20high%2Dtraffic%20applications.)
 
 Let's first create a new storageclass and make it default (Note the encrypted parameter. Set this if you want encrypted volumes provisioned):
 
@@ -67,7 +67,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 You need to create a VolumeSnapshotClass with the same name as the driver and the velero.io label on it (Can't confirm this actually works)
 
-* https://velero.io/docs/main/csi/
+* [Velero CSI Documentation](https://velero.io/docs/main/csi/)
 
 ```
 apiVersion: snapshot.storage.k8s.io/v1
