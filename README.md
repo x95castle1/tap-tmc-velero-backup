@@ -16,7 +16,7 @@ EKS clusters come with the gp2 storageclass by default, but this doesn't come wi
 
 * https://medium.com/@theintrovertalert/gp2-vs-gp3-why-its-time-to-make-the-switch-for-better-aws-ec2-performance-cf777f0a936a#:~:text=GP3%20volumes%20are%20designed%20to,%2C%20and%20high%2Dtraffic%20applications. 
 
-Let's first create a new storageclass and make it default:
+Let's first create a new storageclass and make it default (Note the encrypted parameter. Set this if you want encrypted volumes provisioned):
 
 ```
 apiVersion: storage.k8s.io/v1
