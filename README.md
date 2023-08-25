@@ -88,11 +88,13 @@ You have now prepared your cluster to support CSI Volume Snapshots and you shoul
 
 ### Relevant Documents:
 
-* https://medium.com/@argonaut.dev/upgrade-default-storage-class-for-eks-42193f288b4e
-* https://velero.io/docs/main/csi/
-* https://aws.amazon.com/blogs/containers/using-ebs-snapshots-for-persistent-storage-with-your-eks-cluster/
-* https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/tanzumc-concepts/GUID-C16557BC-EB1B-4414-8E63-28AD92E0CAE5.html?hWord=N4IghgNiBcICZgC5gAQAcBOB7RBTAxogJZYB2IAvkA 
+* [Upgrade Default Storage Class](https://medium.com/@argonaut.dev/upgrade-default-storage-class-for-eks-42193f288b4e)
+* [Change your Default Storage Class](https://kubernetes.io/docs/tasks/administer-cluster/change-default-storage-class/)
+* [Migrate your Amazon EBS Volumes to GP3](https://aws.amazon.com/blogs/storage/migrate-your-amazon-ebs-volumes-from-gp2-to-gp3-and-save-up-to-20-on-costs/)
+* [Velero CSI Documentation](https://velero.io/docs/main/csi/)
+* [AWS: Using EBS Snapshots for PV Storage with EKS](https://aws.amazon.com/blogs/containers/using-ebs-snapshots-for-persistent-storage-with-your-eks-cluster/)
+* [VMware: TMC Data Protection Concepts](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/tanzumc-concepts/GUID-C16557BC-EB1B-4414-8E63-28AD92E0CAE5.html?hWord=N4IghgNiBcICZgC5gAQAcBOB7RBTAxogJZYB2IAvkA)
 
 ### Sample Code (Broken in AWS's Site)
-* https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/examples/kubernetes/storageclass/manifests/storageclass.yaml
-* https://kubernetes.io/docs/tasks/administer-cluster/change-default-storage-class/
+* https://github.com/kubernetes-sigs/aws-ebs-csi-driver/tree/master/examples/kubernetes/storageclass/manifests
+
