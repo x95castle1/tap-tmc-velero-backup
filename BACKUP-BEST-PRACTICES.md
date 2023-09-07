@@ -40,10 +40,10 @@ Both metrics represent an upper bound threshold which can be used to optimize DR
 
 ### Full Cluster Backup
 
-**Scope:** Back up the entire Kubernetes cluster, including all namespaces and resources.
-**Use Case:** Suitable for small clusters or when you need to back up everything for disaster recovery.
-**Pros:** Provides a comprehensive backup of the entire cluster.
-**Cons:** Backup files can be large, and restoration might take longer.
+* **Scope:** Back up the entire Kubernetes cluster, including all namespaces and resources.
+* **Use Case:** Suitable for small clusters or when you need to back up everything for disaster recovery.
+* **Pros:** Provides a comprehensive backup of the entire cluster.
+* **Cons:** Backup files can be large, and restoration might take longer.
 
 ### Namespace-Level Backup:
 
