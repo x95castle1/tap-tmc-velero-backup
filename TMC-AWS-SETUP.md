@@ -1,6 +1,6 @@
 # Setting up AWS Credential for Data Project If Target Location Already Exists
 
-This 
+This guide only needs to be followed if you 
 
 ## 
 
