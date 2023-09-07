@@ -40,60 +40,53 @@ Both metrics represent an upper bound threshold which can be used to optimize DR
 
 ### Full Cluster Backup
 
-* **Scope:** Back up the entire Kubernetes cluster, including all namespaces and resources.
-* **Use Case:** Suitable for small clusters or when you need to back up everything for disaster recovery.
-* **Pros:** Provides a comprehensive backup of the entire cluster.
-* **Cons:** Backup files can be large, and restoration might take longer.
+* Scope: Back up the entire Kubernetes cluster, including all namespaces and resources.
+* Use Case: Suitable for small clusters or when you need to back up everything for disaster recovery.
+* Pros: Provides a comprehensive backup of the entire cluster.
+* Cons: Backup files can be large, and restoration might take longer.
 
 ### Namespace-Level Backup:
 
-Scope: Back up specific namespaces or a selection of namespaces.
-Use Case: Useful for isolating backups for different teams or applications within a shared cluster.
-Pros: More targeted and efficient backups, especially in large clusters.
-Cons: Requires careful selection of namespaces, and you need to manage multiple backups for different namespaces.
+* Scope: Back up specific namespaces or a selection of namespaces.
+* Use Case: Useful for isolating backups for different teams or applications within a shared cluster.
+* Pros: More targeted and efficient backups, especially in large clusters.
+* Cons: Requires careful selection of namespaces, and you need to manage multiple backups for different namespaces.
 
-## Application-Level Backup:
+### Application-Level Backup:
 
-Scope: Back up specific applications or microservices within namespaces.
-Use Case: Ideal for environments with multiple applications sharing namespaces. It allows you to back up only what's essential.
-Pros: Granular control over what gets backed up, reducing backup size.
-Cons: Requires careful resource labeling or annotation to identify and select specific applications.
+* Scope: Back up specific applications or microservices within namespaces.
+* Use Case: Ideal for environments with multiple applications sharing namespaces. It allows you to back up only what's essential.
+* Pros: Granular control over what gets backed up, reducing backup size.
+* Cons: Requires careful resource labeling or annotation to identify and select specific applications.
 
-## Scheduled Backups:
+### Scheduled Backups:
 
-Schedule: Set up recurring backups on a predefined schedule (e.g., daily, weekly).
-Use Case: Ensure regular data protection without manual intervention.
-Pros: Automates the backup process, reducing the risk of forgetting to back up.
-Cons: May lead to storage consumption if retention policies are not defined properly.
+* Schedule: Set up recurring backups on a predefined schedule (e.g., daily, weekly).
+* Use Case: Ensure regular data protection without manual intervention.
+* Pros: Automates the backup process, reducing the risk of forgetting to back up.
+* Cons: May lead to storage consumption if retention policies are not defined properly.
 
-## On-Demand Backups:
+### On-Demand Backups:
 
-Scope: Initiate backups manually when needed.
-Use Case: Provides flexibility to create backups on an ad-hoc basis, such as before making significant changes or updates.
-Pros: Full control over when backups are taken.
-Cons: Requires manual intervention and oversight.
+* Scope: Initiate backups manually when needed.
+* Use Case: Provides flexibility to create backups on an ad-hoc basis, such as before making significant changes or updates.
+* Pros: Full control over when backups are taken.
+* Cons: Requires manual intervention and oversight.
 
-## Retention Policies:
+### Retention Policies:
 
-Define retention policies to manage the lifecycle of your backups.
-Use Case: Specify how long backups are retained before being automatically deleted.
-Pros: Ensures that backup storage does not grow indefinitely and complies with data retention policies.
-Cons: Careful planning is needed to balance the need for long-term retention with storage costs.
+* Define retention policies to manage the lifecycle of your backups.
+* Use Case: Specify how long backups are retained before being automatically deleted.
+* Pros: Ensures that backup storage does not grow indefinitely and complies with data retention policies.
+* Cons: Careful planning is needed to balance the need for long-term retention with storage costs.
 
-## Multi-Location Backups:
+### Custom Resource and Hook Backups:
 
-Scope: Back up to multiple storage locations, such as on-premises and cloud, for redundancy.
-Use Case: Ensures data resilience in case one backup location becomes unavailable.
-Pros: Improved disaster recovery and data availability.
-Cons: Requires additional configuration and storage resources.
+* Scope: Configure Velero to back up custom resources or execute pre/post backup hooks for specific applications.
+* Use Case: Needed when you have custom resources or complex application requirements that Velero does not natively support.
+* Pros: Extends Velero's capabilities to handle non-standard resources or data sources.
+* Cons: Requires additional configuration and scripting.
 
-## Custom Resource and Hook Backups:
-
-Scope: Configure Velero to back up custom resources or execute pre/post backup hooks for specific applications.
-Use Case: Needed when you have custom resources or complex application requirements that Velero does not natively support.
-Pros: Extends Velero's capabilities to handle non-standard resources or data sources.
-Cons: Requires additional configuration and scripting.
-
-## Combination Strategy:
+### Combination Strategy:
 
 Combine different backup strategies based on your cluster's requirements. For example, you might use full cluster backups for disaster recovery and application-level backups for individual application teams.
