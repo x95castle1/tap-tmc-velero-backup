@@ -1,6 +1,6 @@
 # Backup Best Practices and Strategies
 
-Backup strategies and best practices using Velero for Kubernetes clusters involve defining the scope, schedule, and retention policies for your backups. The strategy you choose depends on your application's requirements, data sensitivity, and recovery objectives.
+Backup strategies and best practices using Velero for Kubernetes clusters involve defining the scope, schedule, and retention policies for your backups. The strategy you choose depends on your application's requirements, data sensitivity, and recovery objectives. 
 
 ## Key Elements of DR
 
