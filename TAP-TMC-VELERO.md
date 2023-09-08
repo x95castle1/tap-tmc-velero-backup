@@ -56,7 +56,7 @@ Considerations for the Run Cluster include the following:
 
 Considerations for the Iterate Cluster include the following:
 
-* Do you have databs
+* Are the databases for metadata store and TAP GUI externalized? If externalized then Velero isn't needed.
 * What are their backup/snapshot schedules?
 * How are you installing/managing Accelerators? GitOps?
 * How are you installing/managing Workshops? GitOps?
