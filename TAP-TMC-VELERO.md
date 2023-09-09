@@ -1,6 +1,6 @@
 # Velero Backups and TAP
 
-This document will walk you through different considerations when using Velero to backup TAP. Using Velero to backup and recover TAP is currently NOT tested or supported as of TAP 1.6.
+This document will walk you through different considerations when using Velero to backup TAP. Using Velero to backup and recover TAP is currently NOT tested or supported as of TAP 1.6. 
 
 ## Assumptions
 
@@ -20,6 +20,14 @@ This document will walk you through different considerations when using Velero t
 
 * How will the IRSA/Service Account setup work on a recovered cluster?
 * What are the impacts to the GitOps RI on the new cluster?
+
+## When To Use Velero vs GitOps
+
+* If you've automated your installation of TAP via GitOps and the management of your Workloads, Deliverables, and Configurations via GitOps then it's best to consider allow GitOps to reconcile your cluster and workloads to a healthy state. 
+
+* Velero should be considered for backups and recovery of resources like PVC's or certain applications/namespaces, but shouldn't be considered for full cluster recovery.
+
+When you determining the backup strategy of your cluster it's best to consider a layered and ordered approach to recovering a cluster. This might involve a mixture of using TMC/Terraform to stand up the cluster itself, using GitOps to install the base components of TAP, and then an ordered sequence of restores executed from Velero for individual namespaces or application needs that might need to be ordered in a certain sequence.
 
 ## Cluster Types and Recovery
 
@@ -56,14 +64,13 @@ Considerations for the Run Cluster include the following:
 
 Considerations for the Iterate Cluster include the following:
 
-* Are the databases for metadata store and TAP GUI externalized? If externalized then Velero isn't needed.
+* Are the databases for metadata store externalized? If externalized then Velero isn't needed.
 * What are their backup/snapshot schedules?
-* How are you installing/managing Accelerators? GitOps?
-* How are you installing/managing Workshops? GitOps?
 * Do you need to maintain build history?
 * How are you managing the creation of developer namespaces? Can you recover them via GitOps?
-* Can the sizing/throughput of your Build Cluster manage rebuilding all workloads?
+* Can the sizing/throughput of your Iterate Cluster manage rebuilding all workloads?
 
+Overall, the Iterate cluster is typically ephemeral in nature. Take into consideration if workload recovery is needed.
 
 ## Certificates
 
@@ -71,10 +78,6 @@ It is recommended to exclude certain cert manager resources when backing up and 
 
 * https://cert-manager.io/docs/tutorials/backup/#velero
 
-## When To Use Velero vs GitOps
 
-* If you've automated your installation of TAP via GitOps and the management of your Workloads, Deliverables, and Configurations via GitOps then it's best to consider allow GitOps to reconcile your cluster and workloads to a healthy state. 
-
-* Velero should be considered for backups and recovery of resources like PVC's or certain applications/namespaces, but shouldn't be considered for full cluster recovery.
 
 
